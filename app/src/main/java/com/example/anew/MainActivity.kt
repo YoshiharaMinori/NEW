@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NEWTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    HelloWorld(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -30,18 +29,20 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+const val HELLO_WORLD_MESSAGE = "Hello world!"
+
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun HelloWorld(modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = HELLO_WORLD_MESSAGE,
         modifier = modifier
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun HelloWorldPreview() {
     NEWTheme {
-        Greeting("Android")
+        HelloWorld()
     }
 }
